@@ -35,7 +35,7 @@
             line-height: 1.6;
         }
 
-        /* High-Contrast Fixed Sidebar */
+        /* Desktop Fixed Sidebar */
         aside {
             width: var(--sidebar-width);
             background-color: var(--sidebar-bg);
@@ -252,205 +252,71 @@
             font-weight: 600;
         }
 
+        /* Mobile Optimization (Screens under 768px wide) */
         @media (max-width: 768px) {
-            body { flex-direction: column; }
-            aside { width: 100%; position: relative; height: auto; }
-            main { margin-left: 0; padding: 20px; }
+            body {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--sidebar-border);
+                padding: 24px 20px;
+            }
+
+            .profile-header p {
+                margin-bottom: 16px;
+            }
+
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            nav li {
+                margin-bottom: 0;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.82rem;
+            }
+
+            .sidebar-footer {
+                margin-top: 16px;
+                padding-top: 14px;
+            }
+
+            main {
+                margin-left: 0;
+                padding: 20px 16px 40px;
+                max-width: 100%;
+            }
+
+            .page-card {
+                padding: 24px 20px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .item-date {
+                margin-top: 2px;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Left High-Contrast Sidebar -->
+    <!-- Left / Top Navigation Sidebar -->
     <aside>
         <div class="sidebar-top">
             <div class="profile-header">
-                <h1>Aleena Mariam Thomas</h1>
-                <p>MA Economics Student</p>
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a class="nav-link active" onclick="showTab(event, 'about')">About</a></li>
-                    <li><a class="nav-link" onclick="showTab(event, 'education')">Education</a></li>
-                    <li><a class="nav-link" onclick="showTab(event, 'experience')">Research & Internship</a></li>
-                    <li><a class="nav-link" onclick="showTab(event, 'presentations')">Paper Presentations</a></li>
-                    <li><a class="nav-link" onclick="showTab(event, 'skills')">Technical Skills</a></li>
-                    <li><a class="nav-link" onclick="showTab(event, 'qualifications')">Qualifications & Awards</a></li>
-                    <li><a class="nav-link" onclick="showTab(event, 'sports')">Sports & Co-Curricular</a></li>
-                    <li><a class="nav-link" onclick="showTab(event, 'certifications')">Certifications & Training</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="sidebar-footer">
-            <div>📍 Thiruvalla, Kerala, India</div>
-            <div>✉️ <a href="mailto:aaleenamariam13@gmail.com">aaleenamariam13@gmail.com</a></div>
-            <div>🔗 <a href="https://www.linkedin.com/in/aleena-mariam-thomas-ab46b7361" target="_blank">LinkedIn Profile</a></div>
-        </div>
-    </aside>
-
-    <!-- Main Content Area -->
-    <main>
-
-        <!-- About Tab -->
-        <div id="about" class="tab-content page-card active">
-            <h2 class="page-title">About</h2>
-            <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary);">
-                Postgraduate student in Economics at CMS College, Kottayam, specializing in quantitative research, survey analysis, and empirical modeling. UGC NET 2026 qualified with eligibility for PhD admission. Recognized for academic excellence and student leadership as the Best Outgoing Student of BA Economics (2025) at Mar Thoma College, Thiruvalla.
-            </p>
-        </div>
-
-        <!-- Education Tab -->
-        <div id="education" class="tab-content page-card">
-            <h2 class="page-title">Education</h2>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">MA Economics</span>
-                    <span class="item-date">2025 – 2027 (Expected)</span>
-                </div>
-                <div class="item-sub">CMS College, Kottayam – MG University</div>
-            </div>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">BA Economics</span>
-                    <span class="item-date">2022 – 2025</span>
-                </div>
-                <div class="item-sub">Mar Thoma College, Thiruvalla – MG University</div>
-                <ul class="detail-list">
-                    <li>Aggregate Score: <strong>84%</strong></li>
-                    <li>Awarded <strong>Best Outgoing Student (2025)</strong></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Research & Internship Tab -->
-        <div id="experience" class="tab-content page-card">
-            <h2 class="page-title">Research & Internship Experience</h2>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">Research Intern</span>
-                    <span class="item-date">May 2026</span>
-                </div>
-                <div class="item-sub">Gokhale Institute of Politics and Economics (GIPE), Pune</div>
-                <ul class="detail-list">
-                    <li>Completed a 120-hour research internship under the supervision of Dr. K.S. Reddy.</li>
-                </ul>
-            </div>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">Undergraduate Research Project</span>
-                    <span class="item-date">2025</span>
-                </div>
-                <div class="item-sub">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>
-                <ul class="detail-list">
-                    <li>Investigated the financial strain and socio-economic burden on households dealing with lifestyle diseases.</li>
-                    <li>Executed primary survey design, field data collection, database entry, and quantitative analysis.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Paper Presentations Tab -->
-        <div id="presentations" class="tab-content page-card">
-            <h2 class="page-title">Paper Presentations</h2>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</span>
-                    <span class="item-date">11 August 2026</span>
-                </div>
-                <div class="item-sub">SPARK '26 — National Level Student Research Conclave</div>
-                <ul class="detail-list">
-                    <li>Presented paper at St. Teresa's College (Autonomous), Ernakulam.</li>
-                    <li>Organized by TSRMC in association with KSHEC, IQAC, and TRACC.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Technical Skills Tab -->
-        <div id="skills" class="tab-content page-card">
-            <h2 class="page-title">Technical & Research Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <h4>Programming & Tools</h4>
-                    <div class="tag-container">
-                        <span class="tag">Python</span>
-                        <span class="tag">MS Excel</span>
-                        <span class="tag">MS Word</span>
-                        <span class="tag">MS PowerPoint</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h4>Empirical Methodologies</h4>
-                    <div class="tag-container">
-                        <span class="tag">Data Handling</span>
-                        <span class="tag">Survey Design</span>
-                        <span class="tag">Socio-Economic Analysis</span>
-                        <span class="tag">Data Collection</span>
-                        <span class="tag">Report Writing</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Qualifications Tab -->
-        <div id="qualifications" class="tab-content page-card">
-            <h2 class="page-title">Qualifications & Academic Honors</h2>
-            <ul class="detail-list">
-                <li><strong>UGC NET 2026 Qualified:</strong> Eligible for PhD Admission.</li>
-                <li><strong>Best Outgoing Student:</strong> BA Economics (2025), Mar Thoma College, Thiruvalla.</li>
-                <li><strong>Academic Proficiency Award:</strong> School Level, Balikamatom Higher Secondary School (2020–2021).</li>
-            </ul>
-        </div>
-
-        <!-- Sports & Co-Curricular Tab -->
-        <div id="sports" class="tab-content page-card">
-            <h2 class="page-title">Sports & Co-Curricular Achievements</h2>
-            <div class="item-block">
-                <div class="item-title" style="color: var(--accent-blue); margin-bottom: 10px;">Athletic Achievements</div>
-                <ul class="detail-list">
-                    <li><strong>Inter-Collegiate Football (MG University):</strong> 1st Place (Inter-Zone Level) in both 2023–24 and 2022.</li>
-                    <li><strong>State Level Hockey:</strong> 3rd Place, Kerala Hockey Junior Girls State Championship (2022–23).</li>
-                </ul>
-            </div>
-            <div class="item-block">
-                <div class="item-title" style="color: var(--accent-blue); margin-bottom: 10px;">Co-Curricular Honors</div>
-                <ul class="detail-list">
-                    <li><strong>1st Prize:</strong> Arivarang 2025 Quiz, LAC Level, Election Commission of India.</li>
-                    <li><strong>1st Prize:</strong> Reading Competition (Senior), Taluk Level, Kerala State Library Council (2022).</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Certifications Tab -->
-        <div id="certifications" class="tab-content page-card">
-            <h2 class="page-title">Certifications & Training</h2>
-            <ul class="detail-list">
-                <li><strong>Certificate of Proficiency in Python Programming</strong> (2 Months) — Capital Infotech, Thiruvalla (May 2026).</li>
-                <li><strong>National Service Scheme (NSS):</strong> Government of Kerala (2020–2022).</li>
-                <li><strong>Civil Service as Career & Soft Skill Development:</strong> Dr. APJ Abdul Kalam Academy (2018–2019).</li>
-            </ul>
-        </div>
-
-    </main>
-
-    <!-- Fixed Dynamic Tab Switching Script -->
-    <script>
-        function showTab(evt, tabId) {
-            evt.preventDefault();
-
-            // Hide all tabs
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-
-            // Deactivate all sidebar items
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => link.classList.remove('active'));
-
-            // Activate target tab and clicked sidebar item
-            document.getElementById(tabId).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
-    </script>
-
-</body>
-</html>
