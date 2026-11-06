@@ -6,10 +6,9 @@
     <title>Aleena Mariam Thomas — Academic Portfolio</title>
     <style>
         :root {
-            --sidebar-width: 290px;
+            --sidebar-width: 280px;
             --sidebar-bg: #090d16;
             --sidebar-text: #94a3b8;
-            --sidebar-active: #ffffff;
             --main-bg: #f1f5f9;
             --card-bg: #ffffff;
             --text-primary: #0f172a;
@@ -26,6 +25,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background-color: var(--main-bg);
@@ -33,11 +36,6 @@
             display: flex;
             min-height: 100vh;
             line-height: 1.6;
-        }
-
-        /* Hide radio inputs completely */
-        input[type="radio"] {
-            display: none;
         }
 
         /* Fixed Navigation Sidebar */
@@ -79,41 +77,20 @@
             margin-bottom: 6px;
         }
 
-        /* Nav labels styled as buttons */
-        nav label {
-            width: 100%;
-            text-align: left;
-            background: transparent;
-            border: none;
+        nav a {
             color: var(--sidebar-text);
+            text-decoration: none;
             font-size: 0.90rem;
             font-weight: 500;
             display: block;
-            padding: 10px 14px;
-            border-radius: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
             transition: all 0.2s ease;
-            cursor: pointer;
-            font-family: inherit;
         }
 
-        nav label:hover {
+        nav a:hover {
             color: #ffffff;
             background: rgba(255, 255, 255, 0.08);
-        }
-
-        /* Active styling linked directly to checked inputs */
-        #tab-about:checked ~ aside nav label[for="tab-about"],
-        #tab-education:checked ~ aside nav label[for="tab-education"],
-        #tab-experience:checked ~ aside nav label[for="tab-experience"],
-        #tab-presentations:checked ~ aside nav label[for="tab-presentations"],
-        #tab-skills:checked ~ aside nav label[for="tab-skills"],
-        #tab-qualifications:checked ~ aside nav label[for="tab-qualifications"],
-        #tab-sports:checked ~ aside nav label[for="tab-sports"],
-        #tab-certifications:checked ~ aside nav label[for="tab-certifications"] {
-            color: #ffffff;
-            background: #0284c7;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
         }
 
         .sidebar-footer {
@@ -137,49 +114,34 @@
         main {
             margin-left: var(--sidebar-width);
             flex: 1;
-            padding: 50px 60px;
+            padding: 40px 60px 80px;
             max-width: 900px;
         }
 
-        /* Hide all sections by default */
-        .tab-content {
-            display: none;
-        }
-
-        /* Show the specific section matching the checked radio button */
-        #tab-about:checked ~ main #content-about,
-        #tab-education:checked ~ main #content-education,
-        #tab-experience:checked ~ main #content-experience,
-        #tab-presentations:checked ~ main #content-presentations,
-        #tab-skills:checked ~ main #content-skills,
-        #tab-qualifications:checked ~ main #content-qualifications,
-        #tab-sports:checked ~ main #content-sports,
-        #tab-certifications:checked ~ main #content-certifications {
-            display: block;
-        }
-
-        .page-card {
+        .section-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 36px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            scroll-margin-top: 30px;
         }
 
-        .page-title {
-            font-size: 1.3rem;
+        .section-title {
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--accent-blue);
             font-weight: 700;
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-bottom: 24px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         .item-block {
-            margin-bottom: 24px;
-            padding-bottom: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
             border-bottom: 1px dashed var(--border-color);
         }
 
@@ -198,7 +160,7 @@
         }
 
         .item-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--text-primary);
         }
@@ -216,7 +178,7 @@
             font-size: 0.95rem;
             color: var(--text-secondary);
             font-weight: 500;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         ul.detail-list {
@@ -226,7 +188,7 @@
         }
 
         ul.detail-list li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         ul.detail-list strong {
@@ -235,23 +197,23 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
         }
 
         .skill-group {
             background: var(--main-bg);
             border: 1px solid var(--border-color);
-            padding: 20px;
+            padding: 16px;
             border-radius: 8px;
         }
 
         .skill-group h4 {
-            font-size: 0.92rem;
+            font-size: 0.90rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             color: var(--accent-blue);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
 
@@ -265,9 +227,9 @@
             background: #ffffff;
             color: var(--text-primary);
             border: 1px solid var(--border-color);
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
         }
 
@@ -300,10 +262,9 @@
                 margin-bottom: 0;
             }
 
-            nav label {
-                padding: 8px 12px;
+            nav a {
+                padding: 6px 10px;
                 font-size: 0.82rem;
-                width: auto;
             }
 
             .sidebar-footer {
@@ -317,7 +278,7 @@
                 max-width: 100%;
             }
 
-            .page-card {
+            .section-card {
                 padding: 24px 20px;
             }
 
@@ -336,10 +297,177 @@
 </head>
 <body>
 
-    <!-- Radio Inputs controlling the state (Checked 'about' by default) -->
-    <input type="radio" name="slider" id="tab-about" checked>
-    <input type="radio" name="slider" id="tab-education">
-    <input type="radio" name="slider" id="tab-experience">
-    <input type="radio" name="slider" id="tab-presentations">
-    <input type="radio" name="slider" id="tab-skills">
-    <input type="radio" name="slider" id="tab-
+    <!-- Left / Top Navigation Sidebar -->
+    <aside>
+        <div class="sidebar-top">
+            <div class="profile-header">
+                <h1>Aleena Mariam Thomas</h1>
+                <p>MA Economics Student</p>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Research & Internship</a></li>
+                    <li><a href="#presentations">Paper Presentations</a></li>
+                    <li><a href="#skills">Technical Skills</a></li>
+                    <li><a href="#qualifications">Qualifications & Awards</a></li>
+                    <li><a href="#sports">Sports & Co-Curricular</a></li>
+                    <li><a href="#certifications">Certifications & Training</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="sidebar-footer">
+            <div>📍 Thiruvalla, Kerala, India</div>
+            <div>✉️ <a href="mailto:aaleenamariam13@gmail.com">aaleenamariam13@gmail.com</a></div>
+            <div>🔗 <a href="https://www.linkedin.com/in/aleena-mariam-thomas-ab46b7361" target="_blank">LinkedIn Profile</a></div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- About Section -->
+        <section id="about" class="section-card">
+            <h2 class="section-title">About</h2>
+            <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary);">
+                Postgraduate student in Economics at CMS College, Kottayam, specializing in quantitative research, survey analysis, and empirical modeling. UGC NET 2026 qualified with eligibility for PhD admission. Recognized for academic excellence and student leadership as the Best Outgoing Student of BA Economics (2025) at Mar Thoma College, Thiruvalla.
+            </p>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section-card">
+            <h2 class="section-title">Education</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">MA Economics</span>
+                    <span class="item-date">2025 – 2027 (Expected)</span>
+                </div>
+                <div class="item-sub">CMS College, Kottayam – MG University</div>
+            </div>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">BA Economics</span>
+                    <span class="item-date">2022 – 2025</span>
+                </div>
+                <div class="item-sub">Mar Thoma College, Thiruvalla – MG University</div>
+                <ul class="detail-list">
+                    <li>Aggregate Score: <strong>84%</strong></li>
+                    <li>Awarded <strong>Best Outgoing Student (2025)</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Research & Internship Section -->
+        <section id="experience" class="section-card">
+            <h2 class="section-title">Research & Internship Experience</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">Research Intern</span>
+                    <span class="item-date">May 2026</span>
+                </div>
+                <div class="item-sub">Gokhale Institute of Politics and Economics (GIPE), Pune</div>
+                <ul class="detail-list">
+                    <li>Completed a 120-hour research internship under the supervision of Dr. K.S. Reddy.</li>
+                </ul>
+            </div>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">Undergraduate Research Project</span>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-sub">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>
+                <ul class="detail-list">
+                    <li>Investigated the financial strain and socio-economic burden on households dealing with lifestyle diseases.</li>
+                    <li>Executed primary survey design, field data collection, database entry, and quantitative analysis.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Paper Presentations Section -->
+        <section id="presentations" class="section-card">
+            <h2 class="section-title">Paper Presentations</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</span>
+                    <span class="item-date">11 August 2026</span>
+                </div>
+                <div class="item-sub">SPARK '26 — National Level Student Research Conclave</div>
+                <ul class="detail-list">
+                    <li>Presented paper at St. Teresa's College (Autonomous), Ernakulam.</li>
+                    <li>Organized by TSRMC in association with KSHEC, IQAC, and TRACC.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="section-card">
+            <h2 class="section-title">Technical & Research Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Programming & Tools</h4>
+                    <div class="tag-container">
+                        <span class="tag">Python</span>
+                        <span class="tag">MS Excel</span>
+                        <span class="tag">MS Word</span>
+                        <span class="tag">MS PowerPoint</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>Empirical Methodologies</h4>
+                    <div class="tag-container">
+                        <span class="tag">Data Handling</span>
+                        <span class="tag">Survey Design</span>
+                        <span class="tag">Socio-Economic Analysis</span>
+                        <span class="tag">Data Collection</span>
+                        <span class="tag">Report Writing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qualifications Section -->
+        <section id="qualifications" class="section-card">
+            <h2 class="section-title">Qualifications & Academic Honors</h2>
+            <ul class="detail-list">
+                <li><strong>UGC NET 2026 Qualified:</strong> Eligible for PhD Admission.</li>
+                <li><strong>Best Outgoing Student:</strong> BA Economics (2025), Mar Thoma College, Thiruvalla.</li>
+                <li><strong>Academic Proficiency Award:</strong> School Level, Balikamatom Higher Secondary School (2020–2021).</li>
+            </ul>
+        </section>
+
+        <!-- Sports & Co-Curricular Section -->
+        <section id="sports" class="section-card">
+            <h2 class="section-title">Sports & Co-Curricular Achievements</h2>
+            <div class="item-block">
+                <div class="item-title" style="color: var(--accent-blue); margin-bottom: 8px;">Athletic Achievements</div>
+                <ul class="detail-list">
+                    <li><strong>Inter-Collegiate Football (MG University):</strong> 1st Place (Inter-Zone Level) in both 2023–24 and 2022.</li>
+                    <li><strong>State Level Hockey:</strong> 3rd Place, Kerala Hockey Junior Girls State Championship (2022–23).</li>
+                </ul>
+            </div>
+            <div class="item-block">
+                <div class="item-title" style="color: var(--accent-blue); margin-bottom: 8px;">Co-Curricular Honors</div>
+                <ul class="detail-list">
+                    <li><strong>1st Prize:</strong> Arivarang 2025 Quiz, LAC Level, Election Commission of India.</li>
+                    <li><strong>1st Prize:</strong> Reading Competition (Senior), Taluk Level, Kerala State Library Council (2022).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section-card">
+            <h2 class="section-title">Certifications & Training</h2>
+            <ul class="detail-list">
+                <li><strong>Certificate of Proficiency in Python Programming</strong> (2 Months) — Capital Infotech, Thiruvalla (May 2026).</li>
+                <li><strong>National Service Scheme (NSS):</strong> Government of Kerala (2020–2022).</li>
+                <li><strong>Civil Service as Career & Soft Skill Development:</strong> Dr. APJ Abdul Kalam Academy (2018–2019).</li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
