@@ -3,100 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleena Mariam Thomas</title>
+    <title>Aleena Mariam Thomas | Portfolio</title>
     <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.5;
-            color: #222;
-            max-width: 750px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
             margin: 0 auto;
-            padding: 30px 20px;
-            background-color: #fff;
         }
+
         header {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 15px;
+            background: var(--card-bg);
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             margin-bottom: 25px;
+            border: 1px solid var(--border);
         }
-        h1 { margin: 0 0 5px 0; font-size: 1.8rem; }
-        h2 { color: #555; font-size: 1.1rem; font-weight: normal; margin-top: 0; }
-        .contact-info { font-size: 0.85rem; color: #555; margin-top: 8px; }
-        section { margin-bottom: 25px; }
-        h3 { font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 3px; color: #111; }
-        ul { padding-left: 18px; margin-top: 5px; }
-        li { margin-bottom: 6px; font-size: 0.95rem; }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .contact-info {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            border: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .item-date {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .item-subtitle {
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-group h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            background: #eff6ff;
+            color: var(--accent);
+            border: 1px solid #bfdbfe;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Aleena Mariam Thomas</h1>
-        <h2>MA Economics Student</h2>
-        <div class="contact-info">
-            Thiruvalla, Kerala, India[cite: 1] | Email: aaleenamariam13@gmail.com[cite: 1]
+    <div class="container">
+        
+        <header>
+            <h1>Aleena Mariam Thomas</h1>
+            <div class="subtitle">MA Economics Student</div>
+            <div class="contact-info">
+                <span>📍 Thiruvalla, Kerala, India</span>[cite: 1]
+                <span>✉️ <a href="mailto:aaleenamariam13@gmail.com">aaleenamariam13@gmail.com</a></span>[cite: 1]
+            </div>
+        </header>
+
+        <div class="card">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">MA Economics</span>
+                    <span class="item-date">2025 – 2027 (Expected)</span>[cite: 1]
+                </div>
+                <div class="item-subtitle">CMS College, Kottayam – MG University</div>[cite: 1]
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">BA Economics</span>
+                    <span class="item-date">2022 – 2025</span>[cite: 1]
+                </div>
+                <div class="item-subtitle">Mar Thoma College, Thiruvalla – MG University</div>[cite: 1]
+                <ul>
+                    <li>Percentage: 84%</li>[cite: 1]
+                    <li>Best Outgoing Student (2025)</li>[cite: 2]
+                </ul>
+            </div>
         </div>
-    </header>
 
-    <section>
-        <h3>Education</h3>
-        <ul>
-            <li><strong>MA Economics</strong> (2025–2027 Expected) — CMS College, Kottayam (MG University)[cite: 1]</li>
-            <li><strong>BA Economics</strong> (2022–2025) — Mar Thoma College, Thiruvalla (MG University) | Percentage: 84% — Best Outgoing Student (2025)[cite: 1, 2]</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>Research & Internship Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Research Intern</span>
+                    <span class="item-date">May 2026</span>[cite: 1]
+                </div>
+                <div class="item-subtitle">Gokhale Institute of Politics and Economics (GIPE), Pune</div>[cite: 1]
+                <ul>
+                    <li>Completed a 120-hour internship program under the supervision of Dr. K.S. Reddy.</li>[cite: 1]
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Undergraduate Research Project</span>
+                    <span class="item-date">2025</span>[cite: 1]
+                </div>
+                <div class="item-subtitle">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>[cite: 1]
+                <ul>
+                    <li>Conducted household-level socio-economic analysis and examined the financial and social burden of lifestyle diseases.</li>[cite: 1]
+                    <li>Applied survey-based data collection, primary data entry, and empirical interpretation.</li>[cite: 1]
+                </ul>
+            </div>
+        </div>
 
-    <section>
-        <h3>Internships & Projects</h3>
-        <ul>
-            <li><strong>Research Intern</strong> — Gokhale Institute of Politics and Economics (GIPE), Pune (May 2026)[cite: 1] — Completed a 120-hour internship program under the supervision of Dr. K.S. Reddy[cite: 1].</li>
-            <li><strong>Undergraduate Research Project</strong> (2025)[cite: 1] — Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality. Conducted survey-based data collection, primary data entry, and empirical interpretation[cite: 1].</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>Paper Presentations</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</span>
+                    <span class="item-date">11th August 2026</span>[cite: 1]
+                </div>
+                <ul>
+                    <li>Presented at SPARK' 26 - National Level Student Research Conclave, organized by Teresian Students' Research and Mentoring Cell (TSRMC) in association with KSHEC, IQAC, and TRACC at St. Teresa's College (Autonomous), Ernakulam.</li>[cite: 1]
+                </ul>
+            </div>
+        </div>
 
-    <section>
-        <h3>Paper Presentations</h3>
-        <ul>
-            <li>"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade" — Presented at SPARK'26 National Level Student Research Conclave at St. Teresa's College (Autonomous), Ernakulam (11th August 2026)[cite: 1].</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Technical & Programming</h3>
+                    <div class="badge-container">
+                        <span class="badge">Python Programming</span>[cite: 2]
+                        <span class="badge">MS Excel</span>[cite: 2]
+                        <span class="badge">MS Word</span>[cite: 2]
+                        <span class="badge">MS PowerPoint</span>[cite: 2]
+                        <span class="badge">Data Handling</span>[cite: 2]
+                        <span class="badge">Report Writing</span>[cite: 2]
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Research Skills</h3>
+                    <div class="badge-container">
+                        <span class="badge">Data Collection</span>[cite: 2]
+                        <span class="badge">Survey Design</span>[cite: 2]
+                        <span class="badge">Socio-Economic Analysis</span>[cite: 2]
+                        <span class="badge">Critical Thinking</span>[cite: 2]
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <section>
-        <h3>Skills</h3>
-        <ul>
-            <li><strong>Technical & Programming:</strong> Python Programming, MS Excel, MS Word, MS PowerPoint, Data Handling, Report Writing[cite: 2]</li>
-            <li><strong>Research Skills:</strong> Data Collection, Survey Design, Socio-Economic Analysis, Critical Thinking[cite: 2]</li>
-            <li><strong>Languages:</strong> English, Malayalam, Hindi[cite: 2]</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>Academic Honors & Qualifications</h2>
+            <ul>
+                <li><strong>UGC NET 2026 Qualified</strong> - Eligible for PhD Admission.</li>[cite: 2]
+                <li><strong>Best Outgoing Student</strong> - BA Economics (2025), Mar Thoma College, Thiruvalla.</li>[cite: 2]
+                <li><strong>Academic Proficiency Award</strong> - School Level, Balikamatom Higher Secondary School (2020-2021).</li>[cite: 2]
+            </ul>
+        </div>
 
-    <section>
-        <h3>Academic Honors & Qualifications</h3>
-        <ul>
-            <li>UGC NET 2026 Qualified — Eligible for PhD Admission[cite: 2]</li>
-            <li>Best Outgoing Student — BA Economics (2025), Mar Thoma College, Thiruvalla[cite: 2]</li>
-            <li>Academic Proficiency Award — School Level, Balikamatom Higher Secondary School (2020-2021)[cite: 2]</li>
-        </ul>
-    </section>
+        <div class="card">
+            <h2>Co-Curricular & Sports Achievements</h2>
+            <ul>
+                <li><strong>1st Prize</strong> - Arivarang 2025 Quiz, LAC Level, Election Commission of India.</li>[cite: 2]
+                <li><strong>1st Prize</strong> - Reading Competition (Senior), Taluk Level, Kerala State Library Council (2022).</li>[cite: 2]
+                <li><strong>Inter-Collegiate Football (MG University):</strong> 1st Place (Inter-Zone Level) in both 2023-24 and 2022.</li>[cite: 2]
+                <li><strong>State Level Hockey:</strong> 3rd Place, Kerala Hockey Junior Girls State Championship (2022-23).</li>[cite: 2]
+            </ul>
+        </div>
 
-    <section>
-        <h3>Co-Curricular & Sports Achievements</h3>
-        <ul>
-            <li>1st Prize — Arivarang 2025 Quiz, LAC Level, Election Commission of India[cite: 2]</li>
-            <li>1st Prize — Reading Competition (Senior), Taluk Level, Kerala State Library Council (2022)[cite: 2]</li>
-            <li>Inter-Collegiate Football (MG University): 1st Place (Inter-Zone Level) in both 2023-24 and 2022[cite: 2]</li>
-            <li>State Level Hockey: 3rd Place, Kerala Hockey Junior Girls State Championship (2022-23)[cite: 2]</li>
-        </ul>
-    </section>
-
-    <section>
-        <h3>Certifications & Training</h3>
-        <ul>
-            <li>Certificate of Proficiency in Python Programming (2 Months) — Capital Infotech, Thiruvalla (May 2026)[cite: 2]</li>
-            <li>National Service Scheme (NSS), Government of Kerala (2020-2022)[cite: 2]</li>
-            <li>Civil Service as Career & Soft Skill Development — Dr. APJ Abdul Kalam Academy (2018-2019)[cite: 2]</li>
-        </ul>
-    </section>
+    </div>
 
 </body>
 </html>
