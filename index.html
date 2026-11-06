@@ -75,9 +75,12 @@
             margin-bottom: 6px;
         }
 
-        nav a {
+        nav button {
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
             color: var(--sidebar-text);
-            text-decoration: none;
             font-size: 0.90rem;
             font-weight: 500;
             display: block;
@@ -85,14 +88,15 @@
             border-radius: 8px;
             transition: all 0.2s ease;
             cursor: pointer;
+            font-family: inherit;
         }
 
-        nav a:hover {
+        nav button:hover {
             color: #ffffff;
             background: rgba(255, 255, 255, 0.08);
         }
 
-        nav a.active {
+        nav button.active {
             color: #ffffff;
             background: #0284c7;
             font-weight: 600;
@@ -280,9 +284,10 @@
                 margin-bottom: 0;
             }
 
-            nav a {
+            nav button {
                 padding: 8px 12px;
                 font-size: 0.82rem;
+                width: auto;
             }
 
             .sidebar-footer {
@@ -325,14 +330,14 @@
             
             <nav>
                 <ul>
-                    <li><a class="nav-link active" onclick="switchTab(this, 'about')">About</a></li>
-                    <li><a class="nav-link" onclick="switchTab(this, 'education')">Education</a></li>
-                    <li><a class="nav-link" onclick="switchTab(this, 'experience')">Research & Internship</a></li>
-                    <li><a class="nav-link" onclick="switchTab(this, 'presentations')">Paper Presentations</a></li>
-                    <li><a class="nav-link" onclick="switchTab(this, 'skills')">Technical Skills</a></li>
-                    <li><a class="nav-link" onclick="switchTab(this, 'qualifications')">Qualifications & Awards</a></li>
-                    <li><a class="nav-link" onclick="switchTab(this, 'sports')">Sports & Co-Curricular</a></li>
-                    <li><a class="nav-link" onclick="switchTab(this, 'certifications')">Certifications & Training</a></li>
+                    <li><button type="button" class="nav-btn active" onclick="openTab(this, 'about')">About</button></li>
+                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'education')">Education</button></li>
+                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'experience')">Research & Internship</button></li>
+                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'presentations')">Paper Presentations</button></li>
+                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'skills')">Technical Skills</button></li>
+                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'qualifications')">Qualifications & Awards</button></li>
+                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'sports')">Sports & Co-Curricular</button></li>
+                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'certifications')">Certifications & Training</button></li>
                 </ul>
             </nav>
         </div>
@@ -352,91 +357,4 @@
             <h2 class="page-title">About</h2>
             <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary);">
                 Postgraduate student in Economics at CMS College, Kottayam, specializing in quantitative research, survey analysis, and empirical modeling. UGC NET 2026 qualified with eligibility for PhD admission. Recognized for academic excellence and student leadership as the Best Outgoing Student of BA Economics (2025) at Mar Thoma College, Thiruvalla.
-            </p>
-        </div>
-
-        <!-- Education Tab -->
-        <div id="education" class="tab-content page-card">
-            <h2 class="page-title">Education</h2>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">MA Economics</span>
-                    <span class="item-date">2025 – 2027 (Expected)</span>
-                </div>
-                <div class="item-sub">CMS College, Kottayam – MG University</div>
-            </div>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">BA Economics</span>
-                    <span class="item-date">2022 – 2025</span>
-                </div>
-                <div class="item-sub">Mar Thoma College, Thiruvalla – MG University</div>
-                <ul class="detail-list">
-                    <li>Aggregate Score: <strong>84%</strong></li>
-                    <li>Awarded <strong>Best Outgoing Student (2025)</strong></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Research & Internship Tab -->
-        <div id="experience" class="tab-content page-card">
-            <h2 class="page-title">Research & Internship Experience</h2>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">Research Intern</span>
-                    <span class="item-date">May 2026</span>
-                </div>
-                <div class="item-sub">Gokhale Institute of Politics and Economics (GIPE), Pune</div>
-                <ul class="detail-list">
-                    <li>Completed a 120-hour research internship under the supervision of Dr. K.S. Reddy.</li>
-                </ul>
-            </div>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">Undergraduate Research Project</span>
-                    <span class="item-date">2025</span>
-                </div>
-                <div class="item-sub">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>
-                <ul class="detail-list">
-                    <li>Investigated the financial strain and socio-economic burden on households dealing with lifestyle diseases.</li>
-                    <li>Executed primary survey design, field data collection, database entry, and quantitative analysis.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Paper Presentations Tab -->
-        <div id="presentations" class="tab-content page-card">
-            <h2 class="page-title">Paper Presentations</h2>
-            <div class="item-block">
-                <div class="item-header">
-                    <span class="item-title">"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</span>
-                    <span class="item-date">11 August 2026</span>
-                </div>
-                <div class="item-sub">SPARK '26 — National Level Student Research Conclave</div>
-                <ul class="detail-list">
-                    <li>Presented paper at St. Teresa's College (Autonomous), Ernakulam.</li>
-                    <li>Organized by TSRMC in association with KSHEC, IQAC, and TRACC.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Technical Skills Tab -->
-        <div id="skills" class="tab-content page-card">
-            <h2 class="page-title">Technical & Research Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <h4>Programming & Tools</h4>
-                    <div class="tag-container">
-                        <span class="tag">Python</span>
-                        <span class="tag">MS Excel</span>
-                        <span class="tag">MS Word</span>
-                        <span class="tag">MS PowerPoint</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h4>Empirical Methodologies</h4>
-                    <div class="tag-container">
-                        <span class="tag">Data Handling</span>
-                        <span class="tag">Survey Design</span>
-                        <span class="tag">Socio-Economic Analysis</span>
-                        <span class="tag">Data
+            </
