@@ -57,7 +57,6 @@
             font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 6px;
-            letter-spacing: -0.01em;
         }
 
         .profile-header p {
@@ -130,16 +129,10 @@
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.25s ease-in-out;
         }
 
         .tab-content.active {
             display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .page-card {
@@ -330,14 +323,14 @@
             
             <nav>
                 <ul>
-                    <li><button type="button" class="nav-btn active" onclick="openTab(this, 'about')">About</button></li>
-                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'education')">Education</button></li>
-                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'experience')">Research & Internship</button></li>
-                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'presentations')">Paper Presentations</button></li>
-                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'skills')">Technical Skills</button></li>
-                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'qualifications')">Qualifications & Awards</button></li>
-                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'sports')">Sports & Co-Curricular</button></li>
-                    <li><button type="button" class="nav-btn" onclick="openTab(this, 'certifications')">Certifications & Training</button></li>
+                    <li><button type="button" class="nav-btn active" data-target="about">About</button></li>
+                    <li><button type="button" class="nav-btn" data-target="education">Education</button></li>
+                    <li><button type="button" class="nav-btn" data-target="experience">Research & Internship</button></li>
+                    <li><button type="button" class="nav-btn" data-target="presentations">Paper Presentations</button></li>
+                    <li><button type="button" class="nav-btn" data-target="skills">Technical Skills</button></li>
+                    <li><button type="button" class="nav-btn" data-target="qualifications">Qualifications & Awards</button></li>
+                    <li><button type="button" class="nav-btn" data-target="sports">Sports & Co-Curricular</button></li>
+                    <li><button type="button" class="nav-btn" data-target="certifications">Certifications & Training</button></li>
                 </ul>
             </nav>
         </div>
@@ -357,4 +350,48 @@
             <h2 class="page-title">About</h2>
             <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary);">
                 Postgraduate student in Economics at CMS College, Kottayam, specializing in quantitative research, survey analysis, and empirical modeling. UGC NET 2026 qualified with eligibility for PhD admission. Recognized for academic excellence and student leadership as the Best Outgoing Student of BA Economics (2025) at Mar Thoma College, Thiruvalla.
-            </
+            </p>
+        </div>
+
+        <!-- Education Tab -->
+        <div id="education" class="tab-content page-card">
+            <h2 class="page-title">Education</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">MA Economics</span>
+                    <span class="item-date">2025 – 2027 (Expected)</span>
+                </div>
+                <div class="item-sub">CMS College, Kottayam – MG University</div>
+            </div>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">BA Economics</span>
+                    <span class="item-date">2022 – 2025</span>
+                </div>
+                <div class="item-sub">Mar Thoma College, Thiruvalla – MG University</div>
+                <ul class="detail-list">
+                    <li>Aggregate Score: <strong>84%</strong></li>
+                    <li>Awarded <strong>Best Outgoing Student (2025)</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Research & Internship Tab -->
+        <div id="experience" class="tab-content page-card">
+            <h2 class="page-title">Research & Internship Experience</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">Research Intern</span>
+                    <span class="item-date">May 2026</span>
+                </div>
+                <div class="item-sub">Gokhale Institute of Politics and Economics (GIPE), Pune</div>
+                <ul class="detail-list">
+                    <li>Completed a 120-hour research internship under the supervision of Dr. K.S. Reddy.</li>
+                </ul>
+            </div>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">Undergraduate Research Project</span>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-sub">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>
