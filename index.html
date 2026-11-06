@@ -5,236 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aleena Mariam Thomas | Portfolio</title>
     <style>
-        :root {
-            --primary-dark: #0f172a;
-            --primary-blue: #1e3a8a;
-            --accent-blue: #2563eb;
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            padding-bottom: 50px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fcfcfc;
         }
-
         header {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
-            color: #ffffff;
-            padding: 50px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--accent-blue);
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
-
-        header h1 {
-            font-size: 2.4rem;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
-        }
-
-        header .subtitle {
-            font-size: 1.2rem;
-            color: #93c5fd;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        header .contact-info {
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        header .contact-info a {
-            color: #93c5fd;
-            text-decoration: none;
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 30px auto 0;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 25px;
-            border: 1px solid var(--border);
-        }
-
-        h2 {
-            font-size: 1.25rem;
-            color: var(--primary-blue);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .item {
-            margin-bottom: 18px;
-        }
-
-        .item:last-child {
-            margin-bottom: 0;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-        }
-
-        .item-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-
-        .item-date {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .item-subtitle {
-            font-size: 0.95rem;
-            color: var(--accent-blue);
-            margin-bottom: 6px;
-        }
-
-        ul {
-            padding-left: 20px;
-            color: var(--text-main);
-        }
-
-        li {
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .tag {
-            background: #eff6ff;
-            color: var(--accent-blue);
-            border: 1px solid #bfdbfe;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.88rem;
-            font-weight: 500;
-        }
+        h1 { margin: 0 0 5px 0; color: #111; font-size: 2rem; }
+        h2 { color: #444; font-size: 1.2rem; font-weight: normal; margin-top: 0; }
+        .contact-info { font-size: 0.9rem; color: #666; margin-top: 10px; }
+        section { margin-bottom: 30px; }
+        h3 { border-bottom: 1px solid #eee; padding-bottom: 5px; color: #222; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .tag { background: #eef2f5; padding: 3px 8px; border-radius: 4px; font-size: 0.85rem; display: inline-block; margin-right: 5px; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Aleena Mariam Thomas</h1>
-        <div class="subtitle">MA Economics Student</div>
+        <h2>MA Economics Student</h2>
         <div class="contact-info">
-            <span>Thiruvalla, Kerala, India</span>[cite: 1]
-            <span>Email: <a href="mailto:aaleenamariam13@gmail.com">aaleenamariam13@gmail.com</a></span>[cite: 1]
+            Thiruvalla, Kerala, India | aaleenamariam13@gmail.com
         </div>
     </header>
 
-    <div class="container">
+    <section>
+        <h3>Education</h3>
+        <ul>
+            <li><strong>MA Economics</strong> (2025–2027 Expected) — CMS College, Kottayam (MG University)</li>
+            <li><strong>BA Economics</strong> (2022–2025) — Mar Thoma College, Thiruvalla (MG University) | Percentage: 84% — <em>Best Outgoing Student (2025)</em></li>
+        </ul>
+    </section>
 
-        <div class="card">
-            <h2>Education</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">MA Economics</span>
-                    <span class="item-date">2025 – 2027 (Expected)</span>[cite: 1]
-                </div>
-                <div class="item-subtitle">CMS College, Kottayam – MG University</div>[cite: 1]
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">BA Economics</span>
-                    <span class="item-date">2022 – 2025</span>[cite: 1]
-                </div>
-                <div class="item-subtitle">Mar Thoma College, Thiruvalla – MG University</div>[cite: 1]
-                <ul>
-                    <li>Percentage: 84%</li>[cite: 1]
-                    <li>Best Outgoing Student (2025)</li>[cite: 2]
-                </ul>
-            </div>
+    <section>
+        <h3>Internships & Projects</h3>
+        <ul>
+            <li><strong>Research Intern</strong> — Gokhale Institute of Politics and Economics (GIPE), Pune (May 2026)
+                <br>Completed a 120-hour internship program under the supervision of Dr. K.S. Reddy.
+            </li>
+            <li><strong>Undergraduate Research Project</strong> (2025)
+                <br>Conducted socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality. Applied survey-based data collection, primary data entry, and empirical interpretation.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Paper Presentations</h3>
+        <ul>
+            <li><strong>"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</strong>
+                <br>Presented at SPARK'26 National Level Student Research Conclave at St. Teresa's College (Autonomous), Ernakulam (11th August 2026).
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Skills</h3>
+        <div>
+            <span class="tag">Python Programming</span>
+            <span class="tag">MS Excel</span>
+            <span class="tag">MS Word</span>
+            <span class="tag">MS PowerPoint</span>
+            <span class="tag">Data Handling</span>
+            <span class="tag">Report Writing</span>
+            <span class="tag">Survey Design</span>
+            <span class="tag">Socio-Economic Analysis</span>
         </div>
+    </section>
 
-        <div class="card">
-            <h2>Research & Internship Experience</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Research Intern</span>
-                    <span class="item-date">May 2026</span>[cite: 1]
-                </div>
-                <div class="item-subtitle">Gokhale Institute of Politics and Economics (GIPE), Pune</div>[cite: 1]
-                <ul>
-                    <li>Completed a 120-hour internship program under the supervision of Dr. K.S. Reddy.</li>[cite: 1]
-                </ul>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Undergraduate Research Project</span>
-                    <span class="item-date">2025</span>[cite: 1]
-                </div>
-                <div class="item-subtitle">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>[cite: 1]
-                <ul>
-                    <li>Conducted household-level socio-economic analysis and examined the financial and social burden of lifestyle diseases.</li>[cite: 1]
-                    <li>Applied survey-based data collection, primary data entry, and empirical interpretation.</li>[cite: 1]
-                </ul>
-            </div>
-        </div>
+    <section>
+        <h3>Academic Honors & Qualifications</h3>
+        <ul>
+            <li>UGC NET 2026 Qualified — Eligible for PhD Admission</li>
+            <li>Best Outgoing Student — BA Economics (2025), Mar Thoma College, Thiruvalla</li>
+            <li>Academic Proficiency Award — School Level, Balikamatom Higher Secondary School (2020-2021)</li>
+        </ul>
+    </section>
 
-        <div class="card">
-            <h2>Paper Presentations</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</span>
-                    <span class="item-date">11th August 2026</span>[cite: 1]
-                </div>
-                <ul>
-                    <li>Presented at SPARK' 26 - National Level Student Research Conclave, organized by Teresian Students' Research and Mentoring Cell (TSRMC) in association with KSHEC, IQAC, and TRACC at St. Teresa's College (Autonomous), Ernakulam.</li>[cite: 1]
-                </ul>
-            </div>
-        </div>
+    <section>
+        <h3>Co-Curricular & Sports Achievements</h3>
+        <ul>
+            <li>1st Prize — Arivarang 2025 Quiz, LAC Level, Election Commission of India</li>
+            <li>1st Prize — Reading Competition (Senior), Taluk Level, Kerala State Library Council (2022)</li>
+            <li>Inter-Collegiate Football (MG University): 1st Place (Inter-Zone Level) in both 2023-24 and 2022</li>
+            <li>State Level Hockey: 3rd Place, Kerala Hockey Junior Girls State Championship (2022-23)</li>
+        </ul>
+    </section>
 
-        <div class="card">
-            <h2>Skills</h2>
-            <div class="item">
-                <div class="item-title">Technical & Programming</div>
-                <div class="tag-container">
-                    <span class="tag">Python Programming</span>[cite: 2]
-                    <span class="tag">MS Excel</span>[cite: 2]
-                    <span class="tag">MS Word</span>[cite: 2]
-                    <span class="tag">MS PowerPoint</span>[cite: 2]
-                    <span class="tag">Data Handling</span>[cite: 2]
-                    <span class="tag">Report Writing</span>[cite: 2]
-                </div>
-            </div>
-            <div class="item" style="margin-top: 15px;">
+    <section>
+        <h3>Certifications & Training</h3>
+        <ul>
+            <li>Certificate of Proficiency in Python Programming (2 Months) — Capital Infotech, Thiruvalla (May 2026)</li>
+            <li>National Service Scheme (NSS), Government of Kerala (2020-2022)</li>
+            <li>Civil Service as Career & Soft Skill Development — Dr. APJ Abdul Kalam Academy (2018-2019)</li>
+        </ul>
+    </section>
+
+</body>
+</html>
