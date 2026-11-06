@@ -127,12 +127,9 @@
             max-width: 900px;
         }
 
+        /* Default state: Only About is shown via inline style below, others start hidden */
         .tab-content {
             display: none;
-        }
-
-        .tab-content.active {
-            display: block;
         }
 
         .page-card {
@@ -345,8 +342,8 @@
     <!-- Main Content Area -->
     <main>
 
-        <!-- About Tab -->
-        <div id="about" class="tab-content page-card active">
+        <!-- About Tab (Visible by default) -->
+        <div id="about" class="tab-content page-card" style="display: block;">
             <h2 class="page-title">About</h2>
             <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary);">
                 Postgraduate student in Economics at CMS College, Kottayam, specializing in quantitative research, survey analysis, and empirical modeling. UGC NET 2026 qualified with eligibility for PhD admission. Recognized for academic excellence and student leadership as the Best Outgoing Student of BA Economics (2025) at Mar Thoma College, Thiruvalla.
@@ -395,3 +392,101 @@
                     <span class="item-date">2025</span>
                 </div>
                 <div class="item-sub">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>
+                <ul class="detail-list">
+                    <li>Investigated the financial strain and socio-economic burden on households dealing with lifestyle diseases.</li>
+                    <li>Executed primary survey design, field data collection, database entry, and quantitative analysis.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Paper Presentations Tab -->
+        <div id="presentations" class="tab-content page-card">
+            <h2 class="page-title">Paper Presentations</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</span>
+                    <span class="item-date">11 August 2026</span>
+                </div>
+                <div class="item-sub">SPARK '26 — National Level Student Research Conclave</div>
+                <ul class="detail-list">
+                    <li>Presented paper at St. Teresa's College (Autonomous), Ernakulam.</li>
+                    <li>Organized by TSRMC in association with KSHEC, IQAC, and TRACC.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Technical Skills Tab -->
+        <div id="skills" class="tab-content page-card">
+            <h2 class="page-title">Technical & Research Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Programming & Tools</h4>
+                    <div class="tag-container">
+                        <span class="tag">Python</span>
+                        <span class="tag">MS Excel</span>
+                        <span class="tag">MS Word</span>
+                        <span class="tag">MS PowerPoint</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>Empirical Methodologies</h4>
+                    <div class="tag-container">
+                        <span class="tag">Data Handling</span>
+                        <span class="tag">Survey Design</span>
+                        <span class="tag">Socio-Economic Analysis</span>
+                        <span class="tag">Data Collection</span>
+                        <span class="tag">Report Writing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Qualifications Tab -->
+        <div id="qualifications" class="tab-content page-card">
+            <h2 class="page-title">Qualifications & Academic Honors</h2>
+            <ul class="detail-list">
+                <li><strong>UGC NET 2026 Qualified:</strong> Eligible for PhD Admission.</li>
+                <li><strong>Best Outgoing Student:</strong> BA Economics (2025), Mar Thoma College, Thiruvalla.</li>
+                <li><strong>Academic Proficiency Award:</strong> School Level, Balikamatom Higher Secondary School (2020–2021).</li>
+            </ul>
+        </div>
+
+        <!-- Sports & Co-Curricular Tab -->
+        <div id="sports" class="tab-content page-card">
+            <h2 class="page-title">Sports & Co-Curricular Achievements</h2>
+            <div class="item-block">
+                <div class="item-title" style="color: var(--accent-blue); margin-bottom: 10px;">Athletic Achievements</div>
+                <ul class="detail-list">
+                    <li><strong>Inter-Collegiate Football (MG University):</strong> 1st Place (Inter-Zone Level) in both 2023–24 and 2022.</li>
+                    <li><strong>State Level Hockey:</strong> 3rd Place, Kerala Hockey Junior Girls State Championship (2022–23).</li>
+                </ul>
+            </div>
+            <div class="item-block">
+                <div class="item-title" style="color: var(--accent-blue); margin-bottom: 10px;">Co-Curricular Honors</div>
+                <ul class="detail-list">
+                    <li><strong>1st Prize:</strong> Arivarang 2025 Quiz, LAC Level, Election Commission of India.</li>
+                    <li><strong>1st Prize:</strong> Reading Competition (Senior), Taluk Level, Kerala State Library Council (2022).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certifications Tab -->
+        <div id="certifications" class="tab-content page-card">
+            <h2 class="page-title">Certifications & Training</h2>
+            <ul class="detail-list">
+                <li><strong>Certificate of Proficiency in Python Programming</strong> (2 Months) — Capital Infotech, Thiruvalla (May 2026).</li>
+                <li><strong>National Service Scheme (NSS):</strong> Government of Kerala (2020–2022).</li>
+                <li><strong>Civil Service as Career & Soft Skill Development:</strong> Dr. APJ Abdul Kalam Academy (2018–2019).</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Force-Display Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.nav-btn');
+            const contents = document.querySelectorAll('.tab-content');
+
+            buttons.forEach(function(btn) {
+                btn.addEventListener
