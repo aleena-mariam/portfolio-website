@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleena Mariam Thomas | Portfolio</title>
+    <title>Aleena Mariam Thomas — Academic Portfolio</title>
     <style>
         :root {
-            --bg: #090d16;
-            --card-bg: rgba(17, 24, 39, 0.75);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --badge-bg: rgba(56, 189, 248, 0.08);
-            --badge-border: rgba(56, 189, 248, 0.25);
+            --sidebar-width: 280px;
+            --bg-main: #f8fafc;
+            --sidebar-bg: #0f172a;
+            --sidebar-text: #94a3b8;
+            --sidebar-active: #ffffff;
+            --accent-blue: #2563eb;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --border: #e2e8f0;
         }
 
         * {
@@ -23,353 +24,330 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            display: flex;
+            min-height: 100vh;
             line-height: 1.6;
-            padding: 40px 20px 80px;
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 85%, rgba(30, 58, 138, 0.15) 0%, transparent 40%);
-            background-attachment: fixed;
         }
 
-        .container {
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        /* Hero / Profile Card */
-        .profile-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            padding: 40px;
-            border-radius: 16px;
-            margin-bottom: 28px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-card::before {
-            content: '';
-            position: absolute;
+        /* Fixed Sidebar Navigation */
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            position: fixed;
             top: 0;
+            bottom: 0;
             left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--badge-bg);
-            border: 1px solid var(--badge-border);
-            color: var(--accent);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            background-color: #38bdf8;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #38bdf8;
-        }
-
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        .profile-header h1 {
             color: #ffffff;
+            font-size: 1.35rem;
+            font-weight: 700;
             margin-bottom: 6px;
+            letter-spacing: -0.01em;
         }
 
-        .title-sub {
-            font-size: 1.15rem;
-            color: var(--accent);
+        .profile-header p {
+            font-size: 0.88rem;
+            color: #38bdf8;
             font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            margin-bottom: 12px;
+        }
+
+        nav a {
+            color: var(--sidebar-text);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--sidebar-active);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .sidebar-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.82rem;
+        }
+
+        .sidebar-footer a {
+            color: #38bdf8;
+            text-decoration: none;
+            display: block;
+            margin-top: 6px;
+        }
+
+        /* Main Content Container */
+        main {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 900px;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            scroll-margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-primary);
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 24px;
+        }
+
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .item-block {
             margin-bottom: 20px;
         }
 
-        .contact-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--card-border);
-            padding-top: 20px;
-        }
-
-        .contact-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .contact-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Section Cards */
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            padding: 32px 40px;
-            border-radius: 16px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            font-size: 1.15rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--accent);
-            margin-bottom: 22px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        h2::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--card-border);
-        }
-
-        .item {
-            margin-bottom: 22px;
-        }
-
-        .item:last-child {
+        .item-block:last-child {
             margin-bottom: 0;
         }
 
-        .item-head {
+        .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 10px;
             margin-bottom: 4px;
         }
 
         .item-title {
             font-size: 1.05rem;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--text-primary);
         }
 
         .item-date {
             font-size: 0.85rem;
-            color: var(--text-muted);
-            font-family: monospace;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 2px 8px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #64748b;
+            font-weight: 500;
         }
 
-        .item-subtitle {
-            font-size: 0.95rem;
-            color: #93c5fd;
+        .item-sub {
+            font-size: 0.93rem;
+            color: var(--accent-blue);
+            font-weight: 500;
             margin-bottom: 8px;
         }
 
-        ul {
+        ul.detail-list {
             padding-left: 20px;
-            color: var(--text-muted);
-        }
-
-        li {
-            margin-bottom: 6px;
+            color: var(--text-secondary);
             font-size: 0.93rem;
         }
 
-        li strong {
-            color: var(--text-main);
+        ul.detail-list li {
+            margin-bottom: 6px;
         }
 
-        /* High-Tech Tech Tags */
-        .tech-grid {
+        /* Systematic Skill Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-group {
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 6px;
+        }
+
+        .skill-group h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .tag-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 6px;
         }
 
-        .tech-tag {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--card-border);
-            color: var(--text-main);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.88rem;
+        .tag {
+            background: #ffffff;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.82rem;
             font-weight: 500;
-            transition: all 0.2s ease;
         }
 
-        .tech-tag:hover {
-            border-color: var(--accent);
-            background: var(--accent-glow);
-            color: var(--accent);
-        }
-
-        footer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 40px;
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            aside { width: 100%; position: relative; height: auto; }
+            main { margin-left: 0; padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-
-        <!-- Top Profile Banner -->
-        <header class="profile-card">
-            <div class="status-badge">
-                <span class="status-dot"></span> MA Economics Student
+    <!-- Left Navigation Sidebar -->
+    <aside>
+        <div class="sidebar-top">
+            <div class="profile-header">
+                <h1>Aleena Mariam Thomas</h1>
+                <p>MA Economics Student</p>
             </div>
-            <h1>Aleena Mariam Thomas</h1>
-            <div class="title-sub">CMS College, Kottayam (MG University)</div>
             
-            <div class="contact-links">
-                <span>📍 Thiruvalla, Kerala, India</span>
-                <span>✉️ <a href="mailto:aaleenamariam13@gmail.com">aaleenamariam13@gmail.com</a></span>
-            </div>
-        </header>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Research & Internship</a></li>
+                    <li><a href="#presentations">Paper Presentations</a></li>
+                    <li><a href="#skills">Technical Skills</a></li>
+                    <li><a href="#qualifications">Qualifications</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                </ul>
+            </nav>
+        </div>
 
-        <!-- Education -->
-        <div class="card">
-            <h2>Education</h2>
-            <div class="item">
-                <div class="item-head">
+        <div class="sidebar-footer">
+            <div>📍 Thiruvalla, Kerala, India</div>
+            <div>✉️ <a href="mailto:aaleenamariam13@gmail.com">aaleenamariam13@gmail.com</a></div>
+            <div>🔗 <a href="https://www.linkedin.com/in/aleena-mariam-thomas-ab46b7361" target="_blank">LinkedIn Profile</a></div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- About Section -->
+        <section id="about" class="section-card">
+            <h2 class="section-title">About</h2>
+            <p class="about-text">
+                Postgraduate student in Economics at CMS College, Kottayam, with a strong background in socio-economic survey analysis, empirical research, and data processing using Python. UGC NET 2026 qualified with eligibility for PhD admission. Recognized for leadership and academic excellence as the Best Outgoing Student of BA Economics (2025) at Mar Thoma College, Thiruvalla.
+            </p>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section-card">
+            <h2 class="section-title">Education</h2>
+            <div class="item-block">
+                <div class="item-header">
                     <span class="item-title">MA Economics</span>
                     <span class="item-date">2025 – 2027 (Expected)</span>
                 </div>
-                <div class="item-subtitle">CMS College, Kottayam – MG University</div>
+                <div class="item-sub">CMS College, Kottayam – MG University</div>
             </div>
-            <div class="item">
-                <div class="item-head">
+            <div class="item-block">
+                <div class="item-header">
                     <span class="item-title">BA Economics</span>
                     <span class="item-date">2022 – 2025</span>
                 </div>
-                <div class="item-subtitle">Mar Thoma College, Thiruvalla – MG University</div>
-                <ul>
+                <div class="item-sub">Mar Thoma College, Thiruvalla – MG University</div>
+                <ul class="detail-list">
                     <li>Percentage: 84%</li>
-                    <li>Best Outgoing Student (2025)</li>
+                    <li>Recognized as <strong>Best Outgoing Student (2025)</strong></li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Experience -->
-        <div class="card">
-            <h2>Research & Internship Experience</h2>
-            <div class="item">
-                <div class="item-head">
+        <!-- Experience Section -->
+        <section id="experience" class="section-card">
+            <h2 class="section-title">Research & Internship Experience</h2>
+            <div class="item-block">
+                <div class="item-header">
                     <span class="item-title">Research Intern</span>
                     <span class="item-date">May 2026</span>
                 </div>
-                <div class="item-subtitle">Gokhale Institute of Politics and Economics (GIPE), Pune</div>
-                <ul>
-                    <li>Completed a 120-hour internship program under the supervision of Dr. K.S. Reddy.</li>
+                <div class="item-sub">Gokhale Institute of Politics and Economics (GIPE), Pune</div>
+                <ul class="detail-list">
+                    <li>Completed a 120-hour intensive research internship program under the supervision of Dr. K.S. Reddy.</li>
                 </ul>
             </div>
-            <div class="item">
-                <div class="item-head">
+            <div class="item-block">
+                <div class="item-header">
                     <span class="item-title">Undergraduate Research Project</span>
                     <span class="item-date">2025</span>
                 </div>
-                <div class="item-subtitle">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>
-                <ul>
-                    <li>Conducted household-level socio-economic analysis on the financial and social burden of lifestyle diseases.</li>
-                    <li>Applied survey-based data collection, primary data entry, and empirical interpretation.</li>
+                <div class="item-sub">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>
+                <ul class="detail-list">
+                    <li>Examined household socio-economic strain associated with lifestyle diseases.</li>
+                    <li>Designed primary field surveys, managed data entry, and performed empirical data analysis.</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Papers -->
-        <div class="card">
-            <h2>Paper Presentations</h2>
-            <div class="item">
-                <div class="item-head">
+        <!-- Presentations Section -->
+        <section id="presentations" class="section-card">
+            <h2 class="section-title">Paper Presentations</h2>
+            <div class="item-block">
+                <div class="item-header">
                     <span class="item-title">"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</span>
-                    <span class="item-date">11 Aug 2026</span>
+                    <span class="item-date">11 August 2026</span>
                 </div>
-                <div class="item-subtitle">SPARK' 26 National Level Student Research Conclave</div>
-                <ul>
+                <div class="item-sub">SPARK '26 — National Level Student Research Conclave</div>
+                <ul class="detail-list">
                     <li>Presented at St. Teresa's College (Autonomous), Ernakulam (Organized by TSRMC in association with KSHEC, IQAC, and TRACC).</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- Skills -->
-        <div class="card">
-            <h2>Technical & Analytical Skills</h2>
-            <div class="tech-grid">
-                <span class="tech-tag">Python Programming</span>
-                <span class="tech-tag">MS Excel</span>
-                <span class="tech-tag">MS Word</span>
-                <span class="tech-tag">MS PowerPoint</span>
-                <span class="tech-tag">Data Handling</span>
-                <span class="tech-tag">Report Writing</span>
-                <span class="tech-tag">Survey Design</span>
-                <span class="tech-tag">Socio-Economic Analysis</span>
-                <span class="tech-tag">Data Collection</span>
-            </div>
-        </div>
-
-        <!-- Academic Qualifications & Honors -->
-        <div class="card">
-            <h2>Qualifications & Honors</h2>
-            <ul>
-                <li><strong>UGC NET 2026 Qualified</strong> — Eligible for PhD Admission.</li>
-                <li><strong>Best Outgoing Student</strong> — BA Economics (2025), Mar Thoma College, Thiruvalla.</li>
-                <li><strong>Academic Proficiency Award</strong> — School Level, Balikamatom Higher Secondary School (2020–2021).</li>
-            </ul>
-        </div>
-
-        <!-- Achievements -->
-        <div class="card">
-            <h2>Co-Curricular & Sports Achievements</h2>
-            <ul>
-                <li><strong>1st Prize:</strong> Arivarang 2025 Quiz, LAC Level, Election Commission of India.</li>
-                <li><strong>1st Prize:</strong> Reading Competition (Senior), Taluk Level, Kerala State Library Council (2022).</li>
-                <li><strong>Inter-Collegiate Football (MG University):</strong> 1st Place (Inter-Zone Level) in both 2023–24 and 2022.</li>
-                <li><strong>State Level Hockey:</strong> 3rd Place, Kerala Hockey Junior Girls State Championship (2022–23).</li>
-            </ul>
-        </div>
-
-        <!-- Certifications -->
-        <div class="card">
-            <h2>Certifications & Training</h2>
-            <ul>
-                <li><strong>Certificate of Proficiency in Python Programming</strong> (2 Months) — Capital Infotech, Thiruvalla (May 2026).</li>
-                <li><strong>National Service Scheme (NSS)</strong> — Government of Kerala (2020–2022).</li>
-                <li><strong>Civil Service as Career & Soft Skill Development</strong> — Dr. APJ Abdul Kalam Academy (2018–2019).</li>
-            </ul>
-        </div>
-
-        <footer>
-            &copy; 2026 Aleena Mariam Thomas
-        </footer>
-
-    </div>
-
-</body>
-</html>
+        <!-- Skills Section -->
+        <section id="skills" class="section-card">
+            <h2 class="section-title">Technical & Analytical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Software & Data</h4>
+                    <div class="tag-container">
+                        <span class="tag">Python</span>
+                        <span class="tag">MS Excel</span>
+                        <span class="tag">MS Word</span>
+                        <span class="tag">MS PowerPoint</span>
+                    </div>
+                </div>
+                <div class="skill-
