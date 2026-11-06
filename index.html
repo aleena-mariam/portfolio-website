@@ -7,14 +7,17 @@
     <style>
         :root {
             --sidebar-width: 290px;
-            --bg-main: #0f172a;
-            --content-bg: #1e293b;
-            --card-bg: #334155;
-            --text-primary: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-blue: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.12);
-            --border-color: #475569;
+            --sidebar-bg: #090d16;
+            --sidebar-text: #94a3b8;
+            --sidebar-active: #ffffff;
+            --main-bg: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-blue: #0284c7;
+            --accent-bg: #e0f2fe;
+            --border-color: #cbd5e1;
+            --sidebar-border: #1e293b;
         }
 
         * {
@@ -25,18 +28,18 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--bg-main);
+            background-color: var(--main-bg);
             color: var(--text-primary);
             display: flex;
             min-height: 100vh;
             line-height: 1.6;
         }
 
-        /* Fixed Navigation Sidebar */
+        /* High-Contrast Fixed Sidebar */
         aside {
             width: var(--sidebar-width);
-            background-color: #0b1120;
-            border-right: 1px solid var(--border-color);
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--sidebar-border);
             position: fixed;
             top: 0;
             bottom: 0;
@@ -51,7 +54,7 @@
 
         .profile-header h1 {
             color: #ffffff;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 6px;
             letter-spacing: -0.01em;
@@ -59,8 +62,8 @@
 
         .profile-header p {
             font-size: 0.88rem;
-            color: var(--accent-blue);
-            font-weight: 500;
+            color: #38bdf8;
+            font-weight: 600;
             margin-bottom: 24px;
         }
 
@@ -73,7 +76,7 @@
         }
 
         nav a {
-            color: var(--text-muted);
+            color: var(--sidebar-text);
             text-decoration: none;
             font-size: 0.90rem;
             font-weight: 500;
@@ -86,21 +89,21 @@
 
         nav a:hover {
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         nav a.active {
-            color: var(--accent-blue);
-            background: var(--accent-glow);
-            border-left: 3px solid var(--accent-blue);
+            color: #ffffff;
+            background: #0284c7;
             font-weight: 600;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
         }
 
         .sidebar-footer {
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--sidebar-border);
             padding-top: 20px;
-            font-size: 0.82rem;
-            color: var(--text-muted);
+            font-size: 0.84rem;
+            color: var(--sidebar-text);
         }
 
         .sidebar-footer div {
@@ -108,8 +111,9 @@
         }
 
         .sidebar-footer a {
-            color: var(--accent-blue);
+            color: #38bdf8;
             text-decoration: none;
+            font-weight: 500;
         }
 
         /* Main Viewport Content */
@@ -122,7 +126,7 @@
 
         .tab-content {
             display: none;
-            animation: fadeIn 0.3s ease-in-out;
+            animation: fadeIn 0.25s ease-in-out;
         }
 
         .tab-content.active {
@@ -130,26 +134,26 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
+            from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .page-card {
-            background: var(--content-bg);
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 36px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .page-title {
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--accent-blue);
             font-weight: 700;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 14px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
             margin-bottom: 24px;
         }
 
@@ -175,28 +179,29 @@
 
         .item-title {
             font-size: 1.1rem;
-            font-weight: 600;
-            color: #ffffff;
+            font-weight: 700;
+            color: var(--text-primary);
         }
 
         .item-date {
             font-size: 0.85rem;
             color: var(--accent-blue);
-            font-family: monospace;
-            background: rgba(56, 189, 248, 0.1);
-            padding: 2px 8px;
-            border-radius: 4px;
+            font-weight: 600;
+            background: var(--accent-bg);
+            padding: 3px 10px;
+            border-radius: 6px;
         }
 
         .item-sub {
             font-size: 0.95rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
+            font-weight: 500;
             margin-bottom: 10px;
         }
 
         ul.detail-list {
             padding-left: 20px;
-            color: var(--text-primary);
+            color: var(--text-secondary);
             font-size: 0.95rem;
         }
 
@@ -204,7 +209,11 @@
             margin-bottom: 8px;
         }
 
-        /* Modern Tech Grid */
+        ul.detail-list strong {
+            color: var(--text-primary);
+        }
+
+        /* High-Contrast Skill Cards */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -212,18 +221,19 @@
         }
 
         .skill-group {
-            background: var(--card-bg);
+            background: var(--main-bg);
             border: 1px solid var(--border-color);
             padding: 20px;
             border-radius: 8px;
         }
 
         .skill-group h4 {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             color: var(--accent-blue);
             margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .tag-container {
@@ -233,13 +243,13 @@
         }
 
         .tag {
-            background: #0f172a;
-            color: #ffffff;
+            background: #ffffff;
+            color: var(--text-primary);
             border: 1px solid var(--border-color);
             padding: 5px 12px;
             border-radius: 6px;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
@@ -251,7 +261,7 @@
 </head>
 <body>
 
-    <!-- Left Navigation Sidebar -->
+    <!-- Left High-Contrast Sidebar -->
     <aside>
         <div class="sidebar-top">
             <div class="profile-header">
@@ -261,14 +271,14 @@
             
             <nav>
                 <ul>
-                    <li><a class="nav-link active" onclick="showTab('about')">About</a></li>
-                    <li><a class="nav-link" onclick="showTab('education')">Education</a></li>
-                    <li><a class="nav-link" onclick="showTab('experience')">Research & Internship</a></li>
-                    <li><a class="nav-link" onclick="showTab('presentations')">Paper Presentations</a></li>
-                    <li><a class="nav-link" onclick="showTab('skills')">Technical Skills</a></li>
-                    <li><a class="nav-link" onclick="showTab('qualifications')">Qualifications & Awards</a></li>
-                    <li><a class="nav-link" onclick="showTab('sports')">Sports & Co-Curricular</a></li>
-                    <li><a class="nav-link" onclick="showTab('certifications')">Certifications & Training</a></li>
+                    <li><a class="nav-link active" onclick="showTab(event, 'about')">About</a></li>
+                    <li><a class="nav-link" onclick="showTab(event, 'education')">Education</a></li>
+                    <li><a class="nav-link" onclick="showTab(event, 'experience')">Research & Internship</a></li>
+                    <li><a class="nav-link" onclick="showTab(event, 'presentations')">Paper Presentations</a></li>
+                    <li><a class="nav-link" onclick="showTab(event, 'skills')">Technical Skills</a></li>
+                    <li><a class="nav-link" onclick="showTab(event, 'qualifications')">Qualifications & Awards</a></li>
+                    <li><a class="nav-link" onclick="showTab(event, 'sports')">Sports & Co-Curricular</a></li>
+                    <li><a class="nav-link" onclick="showTab(event, 'certifications')">Certifications & Training</a></li>
                 </ul>
             </nav>
         </div>
@@ -280,18 +290,167 @@
         </div>
     </aside>
 
-    <!-- Main Dynamic Content Views -->
+    <!-- Main Content Area -->
     <main>
 
-        <!-- About View -->
+        <!-- About Tab -->
         <div id="about" class="tab-content page-card active">
             <h2 class="page-title">About</h2>
-            <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-primary);">
+            <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-secondary);">
                 Postgraduate student in Economics at CMS College, Kottayam, specializing in quantitative research, survey analysis, and empirical modeling. UGC NET 2026 qualified with eligibility for PhD admission. Recognized for academic excellence and student leadership as the Best Outgoing Student of BA Economics (2025) at Mar Thoma College, Thiruvalla.
             </p>
         </div>
 
-        <!-- Education View -->
+        <!-- Education Tab -->
         <div id="education" class="tab-content page-card">
             <h2 class="page-title">Education</h2>
-            <div class="item-
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">MA Economics</span>
+                    <span class="item-date">2025 – 2027 (Expected)</span>
+                </div>
+                <div class="item-sub">CMS College, Kottayam – MG University</div>
+            </div>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">BA Economics</span>
+                    <span class="item-date">2022 – 2025</span>
+                </div>
+                <div class="item-sub">Mar Thoma College, Thiruvalla – MG University</div>
+                <ul class="detail-list">
+                    <li>Aggregate Score: <strong>84%</strong></li>
+                    <li>Awarded <strong>Best Outgoing Student (2025)</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Research & Internship Tab -->
+        <div id="experience" class="tab-content page-card">
+            <h2 class="page-title">Research & Internship Experience</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">Research Intern</span>
+                    <span class="item-date">May 2026</span>
+                </div>
+                <div class="item-sub">Gokhale Institute of Politics and Economics (GIPE), Pune</div>
+                <ul class="detail-list">
+                    <li>Completed a 120-hour research internship under the supervision of Dr. K.S. Reddy.</li>
+                </ul>
+            </div>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">Undergraduate Research Project</span>
+                    <span class="item-date">2025</span>
+                </div>
+                <div class="item-sub">"Socio-economic impact of lifestyle diseases on households: A study based on Thiruvalla Municipality"</div>
+                <ul class="detail-list">
+                    <li>Investigated the financial strain and socio-economic burden on households dealing with lifestyle diseases.</li>
+                    <li>Executed primary survey design, field data collection, database entry, and quantitative analysis.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Paper Presentations Tab -->
+        <div id="presentations" class="tab-content page-card">
+            <h2 class="page-title">Paper Presentations</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <span class="item-title">"Domestic Investors and the Resilience of the Indian Stock Market in the Recent Decade"</span>
+                    <span class="item-date">11 August 2026</span>
+                </div>
+                <div class="item-sub">SPARK '26 — National Level Student Research Conclave</div>
+                <ul class="detail-list">
+                    <li>Presented paper at St. Teresa's College (Autonomous), Ernakulam.</li>
+                    <li>Organized by TSRMC in association with KSHEC, IQAC, and TRACC.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Technical Skills Tab -->
+        <div id="skills" class="tab-content page-card">
+            <h2 class="page-title">Technical & Research Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h4>Programming & Tools</h4>
+                    <div class="tag-container">
+                        <span class="tag">Python</span>
+                        <span class="tag">MS Excel</span>
+                        <span class="tag">MS Word</span>
+                        <span class="tag">MS PowerPoint</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h4>Empirical Methodologies</h4>
+                    <div class="tag-container">
+                        <span class="tag">Data Handling</span>
+                        <span class="tag">Survey Design</span>
+                        <span class="tag">Socio-Economic Analysis</span>
+                        <span class="tag">Data Collection</span>
+                        <span class="tag">Report Writing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Qualifications Tab -->
+        <div id="qualifications" class="tab-content page-card">
+            <h2 class="page-title">Qualifications & Academic Honors</h2>
+            <ul class="detail-list">
+                <li><strong>UGC NET 2026 Qualified:</strong> Eligible for PhD Admission.</li>
+                <li><strong>Best Outgoing Student:</strong> BA Economics (2025), Mar Thoma College, Thiruvalla.</li>
+                <li><strong>Academic Proficiency Award:</strong> School Level, Balikamatom Higher Secondary School (2020–2021).</li>
+            </ul>
+        </div>
+
+        <!-- Sports & Co-Curricular Tab -->
+        <div id="sports" class="tab-content page-card">
+            <h2 class="page-title">Sports & Co-Curricular Achievements</h2>
+            <div class="item-block">
+                <div class="item-title" style="color: var(--accent-blue); margin-bottom: 10px;">Athletic Achievements</div>
+                <ul class="detail-list">
+                    <li><strong>Inter-Collegiate Football (MG University):</strong> 1st Place (Inter-Zone Level) in both 2023–24 and 2022.</li>
+                    <li><strong>State Level Hockey:</strong> 3rd Place, Kerala Hockey Junior Girls State Championship (2022–23).</li>
+                </ul>
+            </div>
+            <div class="item-block">
+                <div class="item-title" style="color: var(--accent-blue); margin-bottom: 10px;">Co-Curricular Honors</div>
+                <ul class="detail-list">
+                    <li><strong>1st Prize:</strong> Arivarang 2025 Quiz, LAC Level, Election Commission of India.</li>
+                    <li><strong>1st Prize:</strong> Reading Competition (Senior), Taluk Level, Kerala State Library Council (2022).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certifications Tab -->
+        <div id="certifications" class="tab-content page-card">
+            <h2 class="page-title">Certifications & Training</h2>
+            <ul class="detail-list">
+                <li><strong>Certificate of Proficiency in Python Programming</strong> (2 Months) — Capital Infotech, Thiruvalla (May 2026).</li>
+                <li><strong>National Service Scheme (NSS):</strong> Government of Kerala (2020–2022).</li>
+                <li><strong>Civil Service as Career & Soft Skill Development:</strong> Dr. APJ Abdul Kalam Academy (2018–2019).</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Fixed Dynamic Tab Switching Script -->
+    <script>
+        function showTab(evt, tabId) {
+            evt.preventDefault();
+
+            // Hide all tabs
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Deactivate all sidebar items
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Activate target tab and clicked sidebar item
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
